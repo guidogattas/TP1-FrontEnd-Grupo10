@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo 10 · TP1 Front End</title>
-    <!-- Fuentes de Google: Press Start 2P para títulos retro y VT323 para texto tipo terminal -->
+    <!-- Fuentes retro -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -13,27 +13,35 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Barra de navegación superior -->
+    <!-- Barra de navegacion superior -->
     <header class="header">
         <div class="nav-container">
-            <a href="index.html" class="logo">&lt;GRUPO_10 /&gt;</a>
+            <a href="index.html" class="logo">>> GRUPO_10</a>
+            <!-- Boton de Sonido 8-bit -->
+            <button id="soundToggle" class="btn-sound"
+                aria-label="Activar o desactivar sonido">🔊 SFX: OFF</button>
             <button class="nav-toggle" id="navToggle"
-                aria-label="Abrir menú">☰</button>
+                aria-label="Abrir menu">☰</button>
             <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="belen-gatto.html">María Belén Gatto</a></li>
-                    <li><a href="guido-gattas.html">Guido Gattás</a></li>
-                    <li><a href="lucas-katz.html">Lucas Katz</a></li>
-                    <li><a href="gonzalo-santini.html">Gonzalo Santini</a></li>
-                    <li><a href="bitacora.html"
+                    <li><a href="belen-gatto.html" target="_blank"
+                            rel="noopener noreferrer">Belén Gatto</a></li>
+                    <li><a href="guido-gattas.html" target="_blank"
+                            rel="noopener noreferrer">Guido Gattás</a></li>
+                    <li><a href="lucas-katz.html" target="_blank"
+                            rel="noopener noreferrer">Lucas Katz</a></li>
+                    <li><a href="gonzalo-santini.html" target="_blank"
+                            rel="noopener noreferrer">Gonzalo Santini</a></li>
+                    <li><a href="bitacora.html" target="_blank"
+                            rel="noopener noreferrer"
                             class="btn-bitacora">Bitácora</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main class="main-content">
-        <!-- Presentación del equipo -->
+        <!-- Presentacion del equipo -->
         <section class="hero">
             <p class="tagline">[ INSERT COIN TO PLAY ]</p>
             <h1>GRUPO 10 // DEV TEAM</h1>
@@ -44,65 +52,72 @@
                 perfiles individuales.
             </p>
         </section>
-        <!-- Grilla del equipo -->
+        <!-- Seccion Equipo -->
         <section class="team-section">
             <h2>// SELECT YOUR CHARACTER</h2>
-            <div class="team-grid">
-                <!-- Tarjeta Belén -->
-                <article class="card">
+            <!-- Controles Arcade: Ruleta -->
+            <div class="arcade-controls">
+                <button id="btnRandomPlayer" class="btn-arcade">🎲 [ AUTO PICK
+                    CHARACTER ]</button>
+                <p id="selectionStatus" class="selection-status">&gt; PRESS
+                    BUTTON TO RANDOMIZE</p>
+            </div>
+            <div class="team-grid" id="teamGrid">
+                <!-- Tarjeta Belen -->
+                <article class="card" id="card-0">
                     <div class="avatar avatar-belen">BG</div>
                     <h3>Belén Gatto</h3>
                     <p class="city">📍 Buenos Aires</p>
                     <div class="skills-list">
-                        <span>TEST</span>
-                        <span>TEST</span>
-                        <span>TEST</span>
-                        <span>TEST/UX</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>UI/UX</span>
                     </div>
-                    <a href="https://github.com/belencatt" target="_blank"
-                        rel="noopener noreferrer" class="card-btn">Ver
-                        Perfil →</a>
+                    <a href="belen-gatto.html" target="_blank"
+                        rel="noopener noreferrer" class="card-btn">Ver Perfil
+                        →</a>
                 </article>
                 <!-- Tarjeta Guido -->
-                <article class="card">
+                <article class="card" id="card-1">
                     <div class="avatar avatar-guido">GG</div>
                     <h3>Guido Gattás</h3>
-                    <p class="city">📍 Parque Patricios - CABA</p>
+                    <p class="city">📍 Buenos Aires</p>
                     <div class="skills-list">
-                        <span>TEST</span>
-                        <span>TEST</span>
-                        <span>TEST</span>
-                        <span>TEST</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>PostgreSQL</span>
                     </div>
-                    <a href="https://github.com/guidogattas" target="_blank"
+                    <a href="guido-gattas.html" target="_blank"
                         rel="noopener noreferrer" class="card-btn">Ver Perfil
                         →</a>
                 </article>
                 <!-- Tarjeta Lucas -->
-                <article class="card">
+                <article class="card" id="card-2">
                     <div class="avatar avatar-lucas">LK</div>
                     <h3>Lucas Katz</h3>
                     <p class="city">📍 Buenos Aires</p>
                     <div class="skills-list">
-                        <span>TEST</span>
-                        <span>TEST</span>
-                        <span>TEST</span>
-                        <span>TEST</span>
+                        <span>HTML5</span>
+                        <span>CSS Grid</span>
+                        <span>JavaScript</span>
+                        <span>Git</span>
                     </div>
-                    <a href="https://github.com/LucasKatz" target="_blank"
-                        rel="noopener noreferrer" class="card-btn">Ver
-                        Perfil →</a>
+                    <a href="lucas-katz.html" target="_blank"
+                        rel="noopener noreferrer" class="card-btn">Ver Perfil
+                        →</a>
                 </article>
                 <!-- Tarjeta Gonzalo -->
-                <article class="card">
+                <article class="card" id="card-3">
                     <div class="avatar avatar-gonzalo">GS</div>
                     <h3>Gonzalo Santini</h3>
                     <p class="city">📍 Buenos Aires</p>
                     <div class="skills-list">
-                        <span>TEST</span>
-                        <span>TEST</span>
-                        <span>TEST</span>
-                        <span>TEST</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                        <span>Testing</span>
                     </div>
                     <a href="gonzalo-santini.html" target="_blank"
                         rel="noopener noreferrer" class="card-btn">Ver Perfil
