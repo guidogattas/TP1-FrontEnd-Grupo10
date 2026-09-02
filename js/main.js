@@ -1,4 +1,6 @@
-/* Manejo de menu responsive */
+/* ==========================================================
+   1. MENU RESPONSIVE (Global)
+   ========================================================== */
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
@@ -9,21 +11,19 @@ if (navToggle && navMenu) {
 }
 
 /* ==========================================================
-   MOTOR DE AUDIO 8-BIT (Web Audio API)
+   2. MOTOR DE AUDIO 8-BIT (Web Audio API - Global)
    ========================================================== */
 let audioCtx = null;
 let soundEnabled = false;
 
 const soundToggle = document.getElementById('soundToggle');
 
-// Inicializar contexto de audio con un clic del usuario
 function initAudio() {
     if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     }
 }
 
-// Generador de sonidos arcade
 function playBeep(freq = 440, type = 'square', duration = 0.08) {
     if (!soundEnabled || !audioCtx) return;
 
@@ -33,7 +33,7 @@ function playBeep(freq = 440, type = 'square', duration = 0.08) {
     osc.type = type;
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
 
-    gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+    gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
 
     osc.connect(gain);
@@ -43,14 +43,12 @@ function playBeep(freq = 440, type = 'square', duration = 0.08) {
     osc.stop(audioCtx.currentTime + duration);
 }
 
-// Sonido de victoria / moneda seleccionada
 function playCoinSound() {
     if (!soundEnabled || !audioCtx) return;
     playBeep(987.77, 'square', 0.1);
-    setTimeout(() => playBeep(1318.51, 'square', 0.25), 100);
+    setTimeout(() => playBeep(1318.51, 'square', 0.2), 100);
 }
 
-// Alternar estado de sonido
 if (soundToggle) {
     soundToggle.addEventListener('click', () => {
         initAudio();
@@ -67,15 +65,15 @@ if (soundToggle) {
     });
 }
 
-// Sonido de hover en botones y enlaces
+// Bip retro al pasar el mouse por botones y enlaces
 document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
-        playBeep(300, 'triangle', 0.04);
+        playBeep(300, 'triangle', 0.03);
     });
 });
 
 /* ==========================================================
-   INTERACCIÓN DINÁMICA: RULETA ARCADE (RANDOM PICK)
+   3. RULETA ARCADE (Solo se activa si está en la portada)
    ========================================================== */
 const btnRandom = document.getElementById('btnRandomPlayer');
 const statusText = document.getElementById('selectionStatus');
@@ -85,15 +83,14 @@ if (btnRandom && cards.length > 0) {
     btnRandom.addEventListener('click', () => {
         initAudio();
         btnRandom.disabled = true;
-        statusText.textContent = '> RANDOMIZING CHARACTER...';
+        if (statusText) statusText.textContent = '> RANDOMIZING CHARACTER...';
 
-        // Limpiar selección previa
         cards.forEach(c => c.classList.remove('selected-arcade'));
 
         let currentIndex = 0;
         let laps = 0;
-        const totalLaps = 20 + Math.floor(Math.random() * 8); // Vueltas totales
-        let speed = 80; // Velocidad en ms
+        const totalLaps = 16 + Math.floor(Math.random() * 8);
+        let speed = 80;
 
         function spin() {
             cards.forEach(c => c.classList.remove('selected-arcade'));
@@ -105,18 +102,12 @@ if (btnRandom && cards.length > 0) {
             laps++;
 
             if (laps < totalLaps) {
-
-                // Va frenando hacia el final
-                
-                if (laps > totalLaps - 6) speed += 60;
+                if (laps > totalLaps - 5) speed += 60;
                 setTimeout(spin, speed);
             } else {
-
-                // Jugador elegido final
-
                 const winnerCard = document.querySelector('.card.selected-arcade');
-                const winnerName = winnerCard.querySelector('h3').textContent;
-                statusText.textContent = `> SELECTED: ${winnerName.toUpperCase()}! READY!`;
+                const winnerName = winnerCard ? winnerCard.querySelector('h3').textContent : 'PLAYER';
+                if (statusText) statusText.textContent = `> SELECTED: ${winnerName.toUpperCase()}! READY!`;
                 playCoinSound();
                 btnRandom.disabled = false;
             }
@@ -125,3 +116,13 @@ if (btnRandom && cards.length > 0) {
         spin();
     });
 }
+
+/* ==========================================================
+   4. INTERACCIÓN PARA PERFILES INDIVIDUALES (Global)
+   ========================================================== */
+// Efecto de foco y sonido al interactuar con las tarjetas de favoritos en cualquier perfil
+document.querySelectorAll('.fav-card').forEach(card => {
+    card.addEventListener('click', () => {
+        playBeep(600, 'sine', 0.05);
+    });
+});

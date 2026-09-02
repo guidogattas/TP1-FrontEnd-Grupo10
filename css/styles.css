@@ -1,4 +1,6 @@
-/* Variables y paleta retro */
+/* ==========================================================
+   VARIABLES Y TEMÁTICA SYNTHWAVE / ARCADE RETRO
+   ========================================================== */
 :root {
   --bg-color: #0d0221;
   --card-bg: #190a35;
@@ -16,7 +18,7 @@
   --font-terminal: 'VT323', monospace;
 }
 
-/* Reset basico */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +45,9 @@ ul {
   list-style: none;
 }
 
-/* Header y barra de navegacion */
+/* ==========================================================
+   HEADER Y NAVEGACIÓN GLOBAL
+   ========================================================== */
 .header {
   background-color: var(--card-bg);
   border-bottom: 3px solid var(--neon-pink);
@@ -76,11 +80,14 @@ ul {
   font-size: 0.65rem;
   padding: 0.35rem 0.6rem;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
+.btn-sound:hover,
 .btn-sound.active {
   background-color: var(--neon-cyan);
   color: #000;
+  box-shadow: 0 0 10px var(--neon-cyan);
 }
 
 .nav-menu ul {
@@ -92,6 +99,7 @@ ul {
 .nav-menu a {
   font-size: 1.2rem;
   color: var(--text-muted);
+  transition: color 0.2s;
 }
 
 .nav-menu a:hover,
@@ -118,7 +126,9 @@ ul {
   cursor: pointer;
 }
 
-/* Contenido principal */
+/* ==========================================================
+   ESTILOS DE LA PORTADA (INDEX)
+   ========================================================== */
 .main-content {
   flex: 1;
   width: 90%;
@@ -155,7 +165,6 @@ ul {
   margin: 0 auto;
 }
 
-/* Seccion equipo y ruleta */
 .team-section h2 {
   font-family: var(--font-pixel);
   font-size: 1.1rem;
@@ -178,16 +187,20 @@ ul {
   padding: 0.8rem 1.2rem;
   cursor: pointer;
   box-shadow: 4px 4px 0px #000;
+  transition: transform 0.1s, background-color 0.2s;
 }
 
 .btn-arcade:hover {
   background-color: var(--neon-yellow);
   color: #000;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
 }
 
 .btn-arcade:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
 }
 
 .selection-status {
@@ -197,7 +210,6 @@ ul {
   margin-top: 0.6rem;
 }
 
-/* Grilla de tarjetas */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -293,7 +305,235 @@ ul {
   color: #fff;
 }
 
-/* Footer */
+/* ==========================================================
+   ESTILOS DE PÁGINAS DE PERFIL INDIVIDUAL
+   ========================================================== */
+.profile-breadcrumbs {
+  margin-bottom: 1.5rem;
+}
+
+.btn-back {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  padding: 0.4rem 0.8rem;
+  background-color: var(--card-bg);
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  background-color: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.profile-card {
+  background-color: var(--card-bg);
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 6px 6px 0px #000;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  border-bottom: 2px dashed var(--neon-pink);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.avatar-large {
+  width: 100px;
+  height: 100px;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.player-tag {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  color: var(--neon-yellow);
+  margin-bottom: 0.5rem;
+}
+
+.profile-meta h1 {
+  font-family: var(--font-pixel);
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.meta-item {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+}
+
+.meta-item strong {
+  color: var(--neon-cyan);
+}
+
+.profile-section {
+  margin-bottom: 2.5rem;
+}
+
+.profile-section h2 {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  color: var(--neon-pink);
+  margin-bottom: 1.2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.skill-item {
+  background-color: #000;
+  border: 1px solid var(--neon-green);
+  color: var(--neon-green);
+  text-align: center;
+  padding: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.fav-card {
+  background-color: #0b021a;
+  border: 1px solid var(--neon-cyan);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.fav-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--neon-pink);
+}
+
+/* Base común para todas las imágenes de tarjetas */
+.media-poster {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid #222;
+  margin-bottom: 0.8rem;
+  background-color: #000;
+}
+
+/* Pósters de películas: proporción vertical (2:3) */
+.profile-section:nth-of-type(2) .media-poster {
+  aspect-ratio: 2 / 3;
+  height: auto;
+}
+
+/* Tapas de discos: proporción cuadrada (1:1) */
+.profile-section:nth-of-type(3) .media-poster {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+.fav-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.fav-info h3 {
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.fav-info p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  flex-grow: 1;
+}
+
+.external-link {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--neon-yellow);
+  border: 1px solid var(--neon-yellow);
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.external-link:hover {
+  background-color: var(--neon-yellow);
+  color: #000;
+}
+
+.spotify-link {
+  display: inline-block;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--neon-green);
+  border: 1px solid var(--neon-green);
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.spotify-link:hover {
+  background-color: var(--neon-green);
+  color: #000;
+  box-shadow: 0 0 8px var(--neon-green);
+}
+
+.team-quick-nav {
+  background-color: var(--card-bg);
+  border: 1px dashed var(--neon-cyan);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.team-quick-nav p {
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--neon-cyan);
+}
+
+.quick-nav-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.quick-nav-links a {
+  font-size: 1.2rem;
+  color: var(--neon-yellow);
+  transition: color 0.2s;
+}
+
+.quick-nav-links a:hover {
+  color: var(--neon-pink);
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
 .footer {
   background-color: var(--card-bg);
   border-top: 3px solid var(--neon-cyan);
@@ -303,9 +543,11 @@ ul {
   color: var(--text-muted);
 }
 
-/* Breakpoints obligatorios */
+/* ==========================================================
+   MEDIA QUERIES OBLIGATORIAS (400px / 900px / 1200px)
+   ========================================================== */
 
-/* Menor a 400px */
+/* Menor a 400px (Celulares chicos) */
 @media (max-width: 400px) {
   .hero h1 {
     font-size: 1.2rem;
@@ -313,9 +555,19 @@ ul {
   .team-grid {
     grid-template-columns: 1fr;
   }
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-meta h1 {
+    font-size: 1.1rem;
+  }
 }
 
-/* De 401px a 900px */
+/* De 401px a 900px (Tablets y móviles estándar) */
 @media (max-width: 900px) {
   .nav-toggle {
     display: block;
@@ -344,9 +596,17 @@ ul {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Mayor a 1200px */
+/* Mayor a 1200px (Pantallas grandes) */
 @media (min-width: 1200px) {
   .nav-container, .main-content {
     max-width: 1200px;

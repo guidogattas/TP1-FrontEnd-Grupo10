@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil: Guido Gattás · Grupo 10</title>
+    <!-- Fuentes retro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Barra de navegacion superior -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">&lt;GRUPO_10 /&gt;</a>
+            <!-- Control de Sonido 8-bit -->
+            <button id="soundToggle" class="btn-sound"
+                aria-label="Activar o desactivar sonido">🔊 SFX: OFF</button>
+            <button class="nav-toggle" id="navToggle"
+                aria-label="Abrir menu">☰</button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">&gt; Inicio</a></li>
+                    <li><a href="belen-gatto.html" target="_blank"
+                            rel="noopener noreferrer">&gt; Belén Gatto</a></li>
+                    <li><a href="guido-gattas.html" class="active"
+                            target="_blank" rel="noopener noreferrer">&gt; Guido
+                            Gattás</a></li>
+                    <li><a href="lucas-katz.html" target="_blank"
+                            rel="noopener noreferrer">&gt; Lucas Katz</a></li>
+                    <li><a href="gonzalo-santini.html" target="_blank"
+                            rel="noopener noreferrer">&gt; Gonzalo Santini</a>
+                    </li>
+                    <li><a href="bitacora.html" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-bitacora">Bitácora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <!-- Navegacion interna -->
+        <nav class="profile-breadcrumbs">
+            <a href="index.html" class="btn-back">← Volver al Inicio</a>
+        </nav>
+        <!-- Tarjeta Principal del Perfil -->
+        <section class="profile-card">
+            <div class="profile-header">
+                <div class="avatar avatar-guido avatar-large">GG</div>
+                <div class="profile-meta">
+                    <span class="player-tag">PLAYER 02 // READY</span>
+                    <h1>Guido Gattás</h1>
+                    <p class="meta-item">📍 Ciudad: <strong>Parque Patricios -
+                            CABA</strong></p>
+                    <p class="meta-item">🎂 Edad: <strong>42 años</strong></p>
+                </div>
+            </div>
+            <!-- Seccion Habilidades -->
+            <div class="profile-section">
+                <h2>// HABILIDADES TÉCNICAS (SKILLS)</h2>
+                <ul class="skills-grid">
+                    <li class="skill-item">React</li>
+                    <li class="skill-item">React Native</li>
+                    <li class="skill-item">NodeJS</li>
+                    <li class="skill-item">Firebase</li>
+                </ul>
+            </div>
+            <!-- Seccion Peliculas Favoritas con IMDb -->
+            <div class="profile-section">
+                <h2>// PELÍCULAS FAVORITAS (IMDb)</h2>
+                <div class="favorites-grid">
+                    <article class="fav-card">
+                        <img src="img/peli-oldboy.jpeg" alt="Póster Oldboy"
+                            class="media-poster">
+                        <div class="fav-info">
+                            <h3>Oldboy</h3>
+                            <p>2003 · Acción / Drama</p>
+                            <a href="https://www.imdb.com/title/tt0364569/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="external-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/peli-hobo.jpg"
+                            alt="Póster Hobo with a Shotgun"
+                            class="media-poster">
+                        <div class="fav-info">
+                            <h3>Hobo with a Shotgun</h3>
+                            <p>2011 · Acción / Comedia negra</p>
+                            <a href="https://www.imdb.com/title/tt1640459/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="external-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/peli-idiocracy.jpeg"
+                            alt="Póster Idiocracy" class="media-poster">
+                        <div class="fav-info">
+                            <h3>Idiocracy</h3>
+                            <p>2006 · Comedia / Sci-Fi</p>
+                            <a href="https://www.imdb.com/title/tt0387808/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="external-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- Seccion Discos Favoritos -->
+            <div class="profile-section">
+                <h2>// DISCOS FAVORITOS</h2>
+                <div class="favorites-grid">
+                    <article class="fav-card">
+                        <img src="img/disco-queen.jpeg" alt="Tapa Queen I"
+                            class="media-poster">
+                        <div class="fav-info">
+                            <h3>Queen I</h3>
+                            <p>Queen · 1973</p>
+                            <a href="https://open.spotify.com/album/16br4ndsgOTnBQTjV0W5aB?si=0SDagwe0TI2g6lRD3qYY7A"
+                                target="_blank" rel="noopener noreferrer"
+                                class="spotify-link">
+                                🎧 Abrir en Spotify ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/disco-fungus.jpeg"
+                            alt="Tapa Fungus Amongus" class="media-poster">
+                        <div class="fav-info">
+                            <h3>Fungus Amongus</h3>
+                            <p>Incubus · 1995</p>
+                            <a href="https://www.youtube.com/watch?v=mKsybLIO17o"
+                                target="_blank" rel="noopener noreferrer"
+                                class="spotify-link">
+                                🎧 Abrir en YouTube ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/disco-king.jpeg" alt="Tapa King For A Day"
+                            class="media-poster">
+                        <div class="fav-info">
+                            <h3>King for a Day...</h3>
+                            <p>Faith No More · 1995</p>
+                            <a href="https://open.spotify.com/intl-es/album/198GsVgwHgoas39b8TcPYp?si=922b50be207c4ef4"
+                                target="_blank" rel="noopener noreferrer"
+                                class="spotify-link">
+                                🎧 Abrir en Spotify ↗
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Navegacion rapida entre compañeros -->
+        <nav class="team-quick-nav">
+            <p>// OTROS INTEGRANTES DEL EQUIPO:</p>
+            <div class="quick-nav-links">
+                <a href="belen-gatto.html" target="_blank"
+                    rel="noopener noreferrer">Belén Gatto →</a>
+                <a href="lucas-katz.html" target="_blank"
+                    rel="noopener noreferrer">Lucas Katz →</a>
+                <a href="gonzalo-santini.html" target="_blank"
+                    rel="noopener noreferrer">Gonzalo Santini →</a>
+            </div>
+        </nav>
+    </main>
+    <footer class="footer">
+        <p>© 2026 Grupo 10 · Front End · IFTS 29</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
