@@ -1,6 +1,4 @@
-/* ==========================================================
-   VARIABLES Y TEMÁTICA SYNTHWAVE / ARCADE RETRO
-   ========================================================== */
+/* Variables y Temática Synthwave / Arcade */
 :root {
   --bg-color: #0d0221;
   --card-bg: #190a35;
@@ -45,9 +43,7 @@ ul {
   list-style: none;
 }
 
-/* ==========================================================
-   HEADER Y NAVEGACIÓN GLOBAL
-   ========================================================== */
+/* Header y Navegación Global */
 .header {
   background-color: var(--card-bg);
   border-bottom: 3px solid var(--neon-pink);
@@ -126,9 +122,7 @@ ul {
   cursor: pointer;
 }
 
-/* ==========================================================
-   ESTILOS DE LA PORTADA (INDEX)
-   ========================================================== */
+/* Portada (Index) */
 .main-content {
   flex: 1;
   width: 90%;
@@ -305,9 +299,7 @@ ul {
   color: #fff;
 }
 
-/* ==========================================================
-   ESTILOS DE PÁGINAS DE PERFIL INDIVIDUAL
-   ========================================================== */
+/* Páginas de Perfil Individual (Estructura Común) */
 .profile-breadcrumbs {
   margin-bottom: 1.5rem;
 }
@@ -423,7 +415,7 @@ ul {
   border-color: var(--neon-pink);
 }
 
-/* Base común para todas las imágenes de tarjetas */
+/* Imágenes de favoritos */
 .media-poster {
   width: 100%;
   object-fit: cover;
@@ -433,14 +425,13 @@ ul {
   background-color: #000;
 }
 
-/* Pósters de películas: proporción vertical (2:3) */
-.profile-section:nth-of-type(2) .media-poster {
+/* Clases semánticas directas de proporción */
+.poster-movie {
   aspect-ratio: 2 / 3;
   height: auto;
 }
 
-/* Tapas de discos: proporción cuadrada (1:1) */
-.profile-section:nth-of-type(3) .media-poster {
+.poster-disc {
   aspect-ratio: 1 / 1;
   height: auto;
 }
@@ -465,37 +456,22 @@ ul {
   flex-grow: 1;
 }
 
-.external-link {
+/* Botón externo unificado para películas y música */
+.media-link {
   display: inline-block;
   font-family: var(--font-pixel);
   font-size: 0.6rem;
   color: var(--neon-yellow);
   border: 1px solid var(--neon-yellow);
-  padding: 0.4rem 0.6rem;
+  padding: 0.45rem 0.6rem;
   text-align: center;
   transition: all 0.2s;
 }
 
-.external-link:hover {
+.media-link:hover {
   background-color: var(--neon-yellow);
   color: #000;
-}
-
-.spotify-link {
-  display: inline-block;
-  font-family: var(--font-pixel);
-  font-size: 0.6rem;
-  color: var(--neon-green);
-  border: 1px solid var(--neon-green);
-  padding: 0.4rem 0.6rem;
-  text-align: center;
-  transition: all 0.2s;
-}
-
-.spotify-link:hover {
-  background-color: var(--neon-green);
-  color: #000;
-  box-shadow: 0 0 8px var(--neon-green);
+  box-shadow: 0 0 8px var(--neon-yellow);
 }
 
 .team-quick-nav {
@@ -531,9 +507,19 @@ ul {
   color: var(--neon-pink);
 }
 
-/* ==========================================================
-   FOOTER
-   ========================================================== */
+/* Contenedor común para funciones dinámicas */
+.recomendador-box {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilos de la función dinámica - Perfil Guido Gattás */
+.fav-card.destacado {
+  border-color: var(--neon-yellow);
+  box-shadow: 0 0 10px var(--neon-yellow);
+}
+
+/* Footer */
 .footer {
   background-color: var(--card-bg);
   border-top: 3px solid var(--neon-cyan);
@@ -543,36 +529,20 @@ ul {
   color: var(--text-muted);
 }
 
-/* ==========================================================
-   MEDIA QUERIES OBLIGATORIAS (400px / 900px / 1200px)
-   ========================================================== */
+/* Media Queries Obligatorias */
 
 /* Menor a 400px (Celulares chicos) */
 @media (max-width: 400px) {
-  .hero h1 {
-    font-size: 1.2rem;
-  }
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-  .profile-header {
-    flex-direction: column;
-    text-align: center;
-  }
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-  .profile-meta h1 {
-    font-size: 1.1rem;
-  }
+  .hero h1 { font-size: 1.2rem; }
+  .team-grid { grid-template-columns: 1fr; }
+  .profile-header { flex-direction: column; text-align: center; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .profile-meta h1 { font-size: 1.1rem; }
 }
 
 /* De 401px a 900px (Tablets y móviles estándar) */
 @media (max-width: 900px) {
-  .nav-toggle {
-    display: block;
-  }
-
+  .nav-toggle { display: block; }
   .nav-menu {
     display: none;
     position: absolute;
@@ -583,27 +553,11 @@ ul {
     border-bottom: 3px solid var(--neon-pink);
     padding: 1rem 0;
   }
-
-  .nav-menu.show {
-    display: block;
-  }
-
-  .nav-menu ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .favorites-grid {
-    grid-template-columns: 1fr;
-  }
+  .nav-menu.show { display: block; }
+  .nav-menu ul { flex-direction: column; gap: 1rem; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .favorites-grid { grid-template-columns: 1fr; }
 }
 
 /* Mayor a 1200px (Pantallas grandes) */
@@ -611,15 +565,4 @@ ul {
   .nav-container, .main-content {
     max-width: 1200px;
   }
-}
-
-/* Recomendador de perfil Guido */
-.recomendador-box {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.fav-card.destacado {
-  border-color: var(--neon-yellow);
-  box-shadow: 0 0 10px var(--neon-yellow);
 }
