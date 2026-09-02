@@ -612,3 +612,14 @@ ul {
     max-width: 1200px;
   }
 }
+
+/* Recomendador de perfil Guido */
+.recomendador-box {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fav-card.destacado {
+  border-color: var(--neon-yellow);
+  box-shadow: 0 0 10px var(--neon-yellow);
+}

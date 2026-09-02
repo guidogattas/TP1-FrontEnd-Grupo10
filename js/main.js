@@ -1,6 +1,5 @@
-/* ==========================================================
-   1. MENU RESPONSIVE (Global)
-   ========================================================== */
+// 1. Menú responsive
+
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
@@ -10,9 +9,8 @@ if (navToggle && navMenu) {
     });
 }
 
-/* ==========================================================
-   2. MOTOR DE AUDIO 8-BIT (Web Audio API - Global)
-   ========================================================== */
+// 2. Motor de audio 8-bit
+
 let audioCtx = null;
 let soundEnabled = false;
 
@@ -66,15 +64,15 @@ if (soundToggle) {
 }
 
 // Bip retro al pasar el mouse por botones y enlaces
+
 document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => {
         playBeep(300, 'triangle', 0.03);
     });
 });
 
-/* ==========================================================
-   3. RULETA ARCADE (Solo se activa si está en la portada)
-   ========================================================== */
+// 3. Ruleta arcade (Solo se activa si está en la portada)
+
 const btnRandom = document.getElementById('btnRandomPlayer');
 const statusText = document.getElementById('selectionStatus');
 const cards = document.querySelectorAll('.team-grid .card');
@@ -117,10 +115,9 @@ if (btnRandom && cards.length > 0) {
     });
 }
 
-/* ==========================================================
-   4. INTERACCIÓN PARA PERFILES INDIVIDUALES (Global)
-   ========================================================== */
+// 4. Interacción para perfiles individuales
 // Efecto de foco y sonido al interactuar con las tarjetas de favoritos en cualquier perfil
+
 document.querySelectorAll('.fav-card').forEach(card => {
     card.addEventListener('click', () => {
         playBeep(600, 'sine', 0.05);

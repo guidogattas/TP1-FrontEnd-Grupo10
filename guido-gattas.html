@@ -16,7 +16,7 @@
     <!-- Barra de navegacion superior -->
     <header class="header">
         <div class="nav-container">
-            <a href="index.html" class="logo">&lt;GRUPO_10 /&gt;</a>
+            <a href="index.html" class="logo">GRUPO_10 /</a>
             <!-- Control de Sonido 8-bit -->
             <button id="soundToggle" class="btn-sound"
                 aria-label="Activar o desactivar sonido">🔊 SFX: OFF</button>
@@ -24,16 +24,16 @@
                 aria-label="Abrir menu">☰</button>
             <nav class="nav-menu" id="navMenu">
                 <ul>
-                    <li><a href="index.html">&gt; Inicio</a></li>
+                    <li><a href="index.html"> Inicio</a></li>
                     <li><a href="belen-gatto.html" target="_blank"
-                            rel="noopener noreferrer">&gt; Belén Gatto</a></li>
+                            rel="noopener noreferrer"> Belén Gatto</a></li>
                     <li><a href="guido-gattas.html" class="active"
-                            target="_blank" rel="noopener noreferrer">&gt; Guido
+                            target="_blank" rel="noopener noreferrer"> Guido
                             Gattás</a></li>
                     <li><a href="lucas-katz.html" target="_blank"
-                            rel="noopener noreferrer">&gt; Lucas Katz</a></li>
+                            rel="noopener noreferrer"> Lucas Katz</a></li>
                     <li><a href="gonzalo-santini.html" target="_blank"
-                            rel="noopener noreferrer">&gt; Gonzalo Santini</a>
+                            rel="noopener noreferrer"> Gonzalo Santini</a>
                     </li>
                     <li><a href="bitacora.html" target="_blank"
                             rel="noopener noreferrer"
@@ -161,6 +161,13 @@
                 </div>
             </div>
         </section>
+        <!-- Recomendador al azar (Función dinámica propia) -->
+        <div class="recomendador-box">
+            <button id="btnRecomendar" class="btn-arcade">¿Qué ver o escuchar
+                hoy?</button>
+            <p id="textoRecomendacion" class="selection-status">Hacé clic para
+                elegir uno al azar</p>
+        </div>
         <!-- Navegacion rapida entre compañeros -->
         <nav class="team-quick-nav">
             <p>// OTROS INTEGRANTES DEL EQUIPO:</p>
@@ -178,5 +185,6 @@
         <p>© 2026 Grupo 10 · Front End · IFTS 29</p>
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/guido.js"></script>
 </body>
 </html>
