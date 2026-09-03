@@ -1,5 +1,4 @@
-// 1. Menú responsive
-
+// 1. MENÚ RESPONSIVE (MOBILE)
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
@@ -9,117 +8,76 @@ if (navToggle && navMenu) {
     });
 }
 
-// 2. Motor de audio 8-bit
+// 2. BOTÓN SFX (ON / OFF)
+const botonSonido = document.getElementById('soundToggle');
 
-let audioCtx = null;
-let soundEnabled = false;
+if (botonSonido) {
+    botonSonido.addEventListener('click', () => {
+        botonSonido.classList.toggle('active');
 
-const soundToggle = document.getElementById('soundToggle');
-
-function initAudio() {
-    if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-}
-
-function playBeep(freq = 440, type = 'square', duration = 0.08) {
-    if (!soundEnabled || !audioCtx) return;
-
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-
-    gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
-
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-
-    osc.start();
-    osc.stop(audioCtx.currentTime + duration);
-}
-
-function playCoinSound() {
-    if (!soundEnabled || !audioCtx) return;
-    playBeep(987.77, 'square', 0.1);
-    setTimeout(() => playBeep(1318.51, 'square', 0.2), 100);
-}
-
-if (soundToggle) {
-    soundToggle.addEventListener('click', () => {
-        initAudio();
-        soundEnabled = !soundEnabled;
-
-        if (soundEnabled) {
-            soundToggle.textContent = '🔊 SFX: ON';
-            soundToggle.classList.add('active');
-            playCoinSound();
+        // Cambiamos el texto entre ON y OFF
+        if (botonSonido.classList.contains('active')) {
+            botonSonido.textContent = '🔊 SFX: ON';
         } else {
-            soundToggle.textContent = '🔇 SFX: OFF';
-            soundToggle.classList.remove('active');
+            botonSonido.textContent = '🔊 SFX: OFF';
         }
     });
 }
 
-// Bip retro al pasar el mouse por botones y enlaces
+// 3. RULETA DE PERSONAJES AL AZAR
+const botonRuleta = document.getElementById('btnArcadeRandom');
+const tarjetas = document.querySelectorAll('.team-grid .card');
+const textoEstado = document.querySelector('.selection-status');
 
-document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        playBeep(300, 'triangle', 0.03);
-    });
-});
+// Sonido de Cowabunga
+const sonidoCowabunga = new Audio('sounds/tmnt-turtles-in-time-ost-cowabunga.mp3');
 
-// 3. Ruleta arcade (Solo se activa si está en la portada)
+if (botonRuleta) {
+    botonRuleta.addEventListener('click', () => {
+        // Desactivamos el botón mientras gira
+        botonRuleta.disabled = true;
+        if (textoEstado) textoEstado.textContent = 'Eligiendo personaje...';
 
-const btnRandom = document.getElementById('btnRandomPlayer');
-const statusText = document.getElementById('selectionStatus');
-const cards = document.querySelectorAll('.team-grid .card');
+        // Sacamos clases de giros anteriores
+        tarjetas.forEach(t => t.classList.remove('selected-arcade', 'arcade-winner'));
 
-if (btnRandom && cards.length > 0) {
-    btnRandom.addEventListener('click', () => {
-        initAudio();
-        btnRandom.disabled = true;
-        if (statusText) statusText.textContent = '> RANDOMIZING CHARACTER...';
+        let vueltas = 0;
+        let elegido = 0;
 
-        cards.forEach(c => c.classList.remove('selected-arcade'));
+        // Efecto ruleta simple con setInterval
+        const timer = setInterval(() => {
+            tarjetas.forEach(t => t.classList.remove('selected-arcade'));
 
-        let currentIndex = 0;
-        let laps = 0;
-        const totalLaps = 16 + Math.floor(Math.random() * 8);
-        let speed = 80;
+            elegido = Math.floor(Math.random() * tarjetas.length);
+            tarjetas[elegido].classList.add('selected-arcade');
 
-        function spin() {
-            cards.forEach(c => c.classList.remove('selected-arcade'));
-            cards[currentIndex].classList.add('selected-arcade');
+            vueltas++;
 
-            playBeep(450 + (currentIndex * 80), 'square', 0.05);
+            // Frena a las 12 vueltas
+            if (vueltas >= 12) {
+                clearInterval(timer);
 
-            currentIndex = (currentIndex + 1) % cards.length;
-            laps++;
+                const tarjetaFinal = tarjetas[elegido];
+                tarjetaFinal.classList.remove('selected-arcade');
+                tarjetaFinal.classList.add('arcade-winner');
 
-            if (laps < totalLaps) {
-                if (laps > totalLaps - 5) speed += 60;
-                setTimeout(spin, speed);
-            } else {
-                const winnerCard = document.querySelector('.card.selected-arcade');
-                const winnerName = winnerCard ? winnerCard.querySelector('h3').textContent : 'PLAYER';
-                if (statusText) statusText.textContent = `> SELECTED: ${winnerName.toUpperCase()}! READY!`;
-                playCoinSound();
-                btnRandom.disabled = false;
+                if (textoEstado) textoEstado.textContent = '¡COWABUNGA!';
+
+                // Si el botón dice ON, reproduce el audio
+                if (botonSonido && botonSonido.textContent.includes('ON')) {
+                    sonidoCowabunga.currentTime = 0;
+                    sonidoCowabunga.play();
+                }
+
+                // Buscamos el link del perfil
+                const link = tarjetaFinal.querySelector('.card-btn').href;
+
+                // Espera 2 segundos para que suene entero el Cowabunga y redirige
+                setTimeout(() => {
+                    botonRuleta.disabled = false;
+                    window.location.href = link;
+                }, 2000);
             }
-        }
-
-        spin();
+        }, 120);
     });
 }
-
-// 4. Interacción para perfiles individuales
-// Efecto de foco y sonido al interactuar con las tarjetas de favoritos en cualquier perfil
-
-document.querySelectorAll('.fav-card').forEach(card => {
-    card.addEventListener('click', () => {
-        playBeep(600, 'sine', 0.05);
-    });
-});

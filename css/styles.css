@@ -235,11 +235,31 @@ h1, h2, h3, .logo {
   background-color: var(--card-hover);
 }
 
+/* Estado mientras va pasando la ruleta */
 .card.selected-arcade {
+  border-color: var(--neon-cyan) !important;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 15px var(--neon-cyan);
+}
+
+/* Estado del GANADOR final: resalta mucho más */
+.card.arcade-winner {
   border-color: var(--neon-yellow) !important;
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--neon-yellow);
-  background-color: var(--card-hover);
+  background-color: var(--card-hover) !important;
+  transform: translateY(-8px) scale(1.06) !important;
+  box-shadow: 0 0 30px var(--neon-yellow), inset 0 0 15px rgba(255, 230, 0, 0.3) !important;
+  z-index: 5;
+  transition: all 0.2s ease-in-out;
+  animation: pulsoGanador 0.4s infinite alternate;
+}
+
+@keyframes pulsoGanador {
+  0% {
+    box-shadow: 0 0 20px var(--neon-yellow);
+  }
+  100% {
+    box-shadow: 0 0 35px var(--neon-pink), 0 0 10px #fff;
+  }
 }
 
 /* Avatar en las tarjetas del Index */
