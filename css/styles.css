@@ -45,9 +45,10 @@ ul {
   list-style: none;
 }
 
-/* Encabezados y corte de lineas largas */
+/* Encabezados y corte controlado de palabras */
 h1, h2, h3, .logo {
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 /* Header y Navegacion Global */
@@ -260,10 +261,10 @@ h1, h2, h3, .logo {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Avatar grande en la cabecera del perfil individual */
+/* Avatar grande en el perfil individual */
 .avatar-large {
-  width: 260px;
-  height: 260px;
+  width: 240px;
+  height: 240px;
   max-width: 100%;
   aspect-ratio: 1 / 1;
   font-size: 2.5rem;
@@ -389,12 +390,15 @@ h1, h2, h3, .logo {
   margin-bottom: 2rem;
 }
 
+/* Cabecera de perfil apilada: Avatar arriba y datos abajo */
 .profile-header {
   display: flex;
-  gap: 2rem;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 1.5rem;
   border-bottom: 2px dashed var(--neon-pink);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.8rem;
   margin-bottom: 2rem;
 }
 
@@ -410,7 +414,9 @@ h1, h2, h3, .logo {
   font-family: var(--font-pixel);
   font-size: 1.4rem;
   color: #fff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .meta-item {
@@ -440,14 +446,13 @@ h1, h2, h3, .logo {
   margin-bottom: 1.2rem;
 }
 
-/* Grilla de habilidades en el perfil individual */
+/* Grilla de habilidades */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 
-/* Badge de cada habilidad */
 .skill-item {
   background: linear-gradient(180deg, #1f0b3d 0%, #0d0221 100%);
   border: 2px solid var(--neon-cyan);
@@ -491,7 +496,7 @@ h1, h2, h3, .logo {
   border-color: var(--neon-pink);
 }
 
-/* Imagenes de favoritos */
+/* Caratulas y proporciones */
 .media-poster {
   width: 100%;
   object-fit: cover;
@@ -502,7 +507,6 @@ h1, h2, h3, .logo {
   display: block;
 }
 
-/* Clases de proporcion */
 .poster-movie {
   aspect-ratio: 2 / 3;
   height: auto;
@@ -533,7 +537,7 @@ h1, h2, h3, .logo {
   flex-grow: 1;
 }
 
-/* Boton externo unificado para peliculas y musica */
+/* Enlaces externos */
 .media-link {
   display: inline-block;
   font-family: var(--font-pixel);
@@ -584,13 +588,12 @@ h1, h2, h3, .logo {
   color: var(--neon-pink);
 }
 
-/* Contenedor comun para funciones dinamicas */
+/* Caja de seleccion al azar */
 .recomendador-box {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* Estilos de la funcion dinamica: Perfil Guido Gattas */
 .fav-card.destacado {
   border-color: var(--neon-yellow) !important;
   box-shadow: 0 0 15px var(--neon-yellow) !important;
@@ -607,10 +610,72 @@ h1, h2, h3, .logo {
 }
 
 /* Media Queries Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    width: 94%;
+    padding: 1.5rem 0;
+  }
 
-/* De 401px a 900px (Tablets y moviles estandar) */
-@media (max-width: 900px) {
-  .nav-toggle { display: block; }
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .hero .description {
+    font-size: 1.15rem;
+  }
+
+  .profile-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-meta h1 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .player-tag {
+    font-size: 0.55rem;
+  }
+
+  .meta-item {
+    font-size: 1.15rem;
+  }
+
+  .avatar {
+    width: 170px;
+    height: 170px;
+    margin-bottom: 1rem;
+  }
+
+  .avatar-large {
+    width: 180px;
+    height: 180px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .skill-item {
+    font-size: 0.6rem;
+    padding: 0.7rem 0.3rem;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-toggle { 
+    display: block; 
+  }
+
   .nav-menu {
     display: none;
     position: absolute;
@@ -621,70 +686,47 @@ h1, h2, h3, .logo {
     border-bottom: 3px solid var(--neon-pink);
     padding: 1rem 0;
   }
-  .nav-menu.show { display: block; }
-  .nav-menu ul { flex-direction: column; gap: 1rem; }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .favorites-grid { grid-template-columns: 1fr; }
 
-  /* Escala de avatares en tablets */
-  .avatar {
-    width: 160px;
-    height: 160px;
-  }
-  .avatar-large {
-    width: 180px;
-    height: 180px;
-    font-size: 2rem;
-  }
-}
-
-/* Menor a 400px (Celulares chicos) */
-@media (max-width: 400px) {
-  .main-content {
-    width: 95%;
+  .nav-menu.show { 
+    display: block; 
   }
 
-  .profile-card {
-    padding: 1.2rem 0.8rem;
+  .nav-menu ul { 
+    flex-direction: column; 
+    gap: 1rem; 
   }
 
-  .profile-header {
+  .team-quick-nav {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
-  }
-
-  .hero h1 { font-size: 1.2rem; }
-  .profile-meta h1 { font-size: 1.1rem; }
-  .team-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr; }
-
-  /* Avatar adaptado al ancho de pantalla */
-  .avatar {
-    width: 100%;
-    max-width: 130px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto 1rem auto;
-  }
-
-  .avatar-large {
-    width: 100%;
-    max-width: 140px;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    font-size: 1.6rem;
-    margin: 0 auto;
   }
 
   .quick-nav-links {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 }
 
-/* Mayor a 1200px (Pantallas grandes) */
+@media (max-width: 360px) {
+  .profile-meta h1 {
+    font-size: 0.85rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+
+  .avatar-large {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 @media (min-width: 1200px) {
   .nav-container, .main-content {
     max-width: 1200px;
