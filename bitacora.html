@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora del Proyecto | Grupo 10</title>
+    <!-- Fuentes Arcade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Global -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">>> GRUPO 10</a>
+            <button id="soundToggle" class="btn-sound active">🔊 SFX:
+                ON</button>
+            <button class="nav-toggle" id="navToggle"
+                aria-label="Abrir menú">☰</button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="guido-gattas.html">GUIDO</a></li>
+                    <li><a href="lucas-katz.html">LUCAS</a></li>
+                    <li><a href="belen-gatto.html">BELÉN</a></li>
+                    <li><a href="gonzalo-santini.html">GONZALO</a></li>
+                    <li><a href="bitacora.html"
+                            class="btn-bitacora active">BITÁCORA</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Contenido de Bitácora -->
+    <main class="main-content">
+        <div class="hero">
+            <p class="tagline">HISTORIAL DE DESARROLLO</p>
+            <h1>BITÁCORA DEL PROYECTO</h1>
+            <p class="description">Registro cronológico de reuniones,
+                arquitectura y avance individual del equipo.</p>
+        </div>
+        <!-- Entrada 1 -->
+        <article class="profile-card">
+            <header class="profile-header">
+                <span class="player-tag">INICIO | 29/08/2026</span>
+                <div class="profile-meta">
+                    <h1>Reunión inicial (Meet) — Unificación de ideas y temática
+                    </h1>
+                </div>
+            </header>
+            <div class="profile-section">
+                <p class="meta-item">
+                    En la primera reunión grupal definimos el concepto central
+                    de nuestro sitio: elegimos una temática visual Retro Arcade
+                    inspirada en las décadas de los 80s y 90s. Decidimos usar
+                    una paleta oscura con contrastes en colores neón (cyan,
+                    fucsia y amarillo) combinada con tipografías pixeladas
+                    (Press Start 2P y VT323) para diferenciarnos de interfaces
+                    convencionales. Se estructuró el trabajo inicial dividiendo
+                    las responsabilidades entre los integrantes del equipo.
+                </p>
+            </div>
+        </article>
+        <!-- Entrada 2 -->
+        <article class="profile-card">
+            <header class="profile-header">
+                <span class="player-tag">PLANIFICACIÓN (MEET) |
+                    31/08/2026</span>
+                <div class="profile-meta">
+                    <h1>Definición de requerimientos y reparto de tareas</h1>
+                </div>
+            </header>
+            <div class="profile-section">
+                <p class="meta-item">
+                    Se detalló el alcance funcional del Trabajo Práctico,
+                    establecimos que el proyecto combinaría componentes grupales
+                    (portada principal, barra de navegación, bitácora y pie de
+                    página) con secciones individuales (perfiles detallados de
+                    cada integrante). Definimos los contenidos mínimos de cada
+                    perfil: habilidades técnicas, películas favoritas con
+                    enlaces a IMDb y discos preferidos con accesos directos a
+                    plataformas de música.
+                </p>
+            </div>
+        </article>
+        <!-- Entrada 3 -->
+        <article class="profile-card">
+            <header class="profile-header">
+                <span class="player-tag">CONFIGURACIÓN Y ESTRUCTURA BASE |
+                    01/09/2026</span>
+                <div class="profile-meta">
+                    <h1>Creación del repositorio y estructura de archivos</h1>
+                </div>
+            </header>
+            <div class="profile-section">
+                <p class="meta-item">
+                    Creamos el repositorio grupal en GitHub y definimos la
+                    arquitectura del proyecto siguiendo las pautas de la
+                    consigna: index.html, bitacora.html y los perfiles
+                    individuales ubicados estrictamente en la raíz, junto con
+                    carpetas dedicadas para css/, js/ e img/. Acordamos una
+                    metodología de trabajo basada en ramas independientes
+                    (feature/portada-arcade, feature/perfil-guido, etc.) para
+                    realizar commits y fusionar los cambios de manera controlada
+                    hacia main. Armamos la base con los html, css y js,
+                    estructuramos la mayoría del proyecto e hicimos el primer
+                    push a GitHub, y realizamos también el deploy en Vercel,
+                    para poder ir viendo cómo se ve en otros dispositivos, para
+                    ver si realmente está siendo responsive.
+                </p>
+                <p class="meta-item" style="margin-top: 1rem;">
+                    Para el desarrollo de la interactividad, nos apoyamos en el
+                    modelo de IA Gemini 2.5 Pro de Google, utilizándolo
+                    específicamente para la creación de los efectos de sonido FX
+                    8-bit sintetizados con la Web Audio API y la implementación
+                    de la ruleta arcade para la selección aleatoria de
+                    personajes.
+                </p>
+            </div>
+        </article>
+        <!-- Entrada 4 -->
+        <article class="profile-card">
+            <header class="profile-header">
+                <span class="player-tag">DESARROLLO INDIVIDUAL GUIDO GATTÁS |
+                    02/09/2026</span>
+                <div class="profile-meta">
+                    <h1>Maquetado del perfil de Guido Gattás, ajuste visual de
+                        medios y enlaces externos</h1>
+                </div>
+            </header>
+            <div class="profile-section">
+                <p class="meta-item">
+                    Se completó el desarrollo de la página guido-gattas.html en
+                    la rama feature/perfil-guido. Se integraron habilidades
+                    técnicas, pósters de películas enlazados a IMDb y carátulas
+                    de álbumes vinculadas a YouTube. Se resolvieron problemas de
+                    proporción en imágenes aplicando aspect-ratio mediante CSS y
+                    se consolidó el código en la rama main después de validar su
+                    navegación interna. Vamos a ir subiendo cada uno su perfil
+                    en diferentes momentos para no tener confictos con GitHub,
+                    por las dudas.
+                </p>
+            </div>
+        </article>
+        <!-- Entrada 5 -->
+        <article class="profile-card">
+            <header class="profile-header">
+                <span class="player-tag">DESARROLLO INDIVIDUAL LUCAS KATZ |
+                    03/09/2026</span>
+                <div class="profile-meta">
+                    <h1>Maquetado del perfil de Lucas Katz, catálogo multimedia
+                        y grilla responsive</h1>
+                </div>
+            </header>
+            <div class="profile-section">
+                <p class="meta-item">
+                    Se completó el desarrollo de la página lucas-katz.html en la
+                    rama feature/perfil-lucas. Se estructuró la sección
+                    biográfica, el bloque de habilidades técnicas y la selección
+                    de películas y discos favoritos, configurando enlaces
+                    externos con apertura en nueva pestaña (target="_blank" y
+                    rel="noopener noreferrer") hacia IMDb y plataformas de
+                    música. Además, se integró su tarjeta personal en el
+                    index.html vinculándola a la grilla general del equipo y
+                    reutilizando las variables globales de CSS para mantener
+                    intacta la estética arcade. Tras validar el diseño
+                    responsive y comprobar que no se rompían los estilos base,
+                    se hizo el commit y push correspondientes para fusionar los
+                    cambios en la rama main.
+                </p>
+            </div>
+        </article>
+        <!-- Entrada 6 -->
+        <article class="profile-card">
+            <header class="profile-header">
+                <span class="player-tag">DESARROLLO INDIVIDUAL BELÉN GATTO |
+                    03/09/2026</span>
+                <div class="profile-meta">
+                    <h1>Maquetado del perfil de Belén Gatto, animación Pac-Man y
+                        sincronización de sonido</h1>
+                </div>
+            </header>
+            <div class="profile-section">
+                <p class="meta-item">
+                    Se finalizó la página belen-gatto.html en la rama
+                    feature/perfil-belen con toda su información personal,
+                    intereses y tecnologías. A nivel interactivo, se programó la
+                    lógica en js/belen.js para crear la animación temática de un
+                    Pac-Man persiguiendo a un fantasma que atraviesa la pantalla
+                    al presionar un botón. Se integró la reproducción de audio
+                    retro condicionada al estado del interruptor general de SFX
+                    (SFX: ON/OFF) del sitio. Para evitar errores visuales y
+                    de audio si el usuario hace clics repetidos, se deshabilitó
+                    el botón durante la animación y se implementó un
+                    temporizador con setTimeout que elimina los nodos creados en
+                    el DOM y detiene el sonido a los 4 segundos. Una vez
+                    testeadas las funciones en Vercel, se realizó el merge en
+                    main.
+                </p>
+            </div>
+        </article>
+    </main>
+    <!-- Footer Global -->
+    <footer class="footer">
+        <p> GRUPO 10 · DESARROLLO DE SISTEMAS WEB (FRONT-END 2026) </p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
