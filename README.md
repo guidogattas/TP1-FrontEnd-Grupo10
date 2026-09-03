@@ -33,7 +33,6 @@ El sitio está subido a Vercel para probarlo directamente en vivo:
 
 ## Organización de carpetas
 
-```text
 ├── index.html              # Portada principal con la ruleta y las cards del equipo
 ├── bitacora.html           # Registro de reuniones y avance paso a paso
 ├── guido-gattas.html       # Perfil individual
@@ -72,8 +71,18 @@ Gonzalo: Detector/radar zombie con simulación de escaneo, sonido de radar y rep
 
 Bitácora: Registro ordenado por fecha con las reuniones de Meet, decisiones de diseño, división del trabajo y cómo se fue armando el código.
 
+---
 
-Cómo correrlo en local
+##  Uso de Inteligencia Artificial
+
+Durante el desarrollo del proyecto utilizamos la asistencia de **Google Gemini PRO (modelo 3.8 Flash)** como herramienta de soporte para:
+* Refactorización y optimización de funciones en JavaScript (manejo de temporizadores, eventos y control seguro de audio).
+* Consulta de sintaxis para animaciones CSS y corrección de bugs en la consola.
+* Buenas prácticas de accesibilidad y estructuración semántica del HTML.
+
+Todo el código sugerido fue analizado, adaptado e integrado manualmente por el equipo para mantener la coherencia estética y funcional del sitio.
+
+**Cómo correrlo en local
 No hace falta instalar nada ni usar npm:
 
 Clonar el repo:
