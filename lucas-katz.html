@@ -74,23 +74,14 @@
                     <li class="skill-item">MySQL</li>
                 </ul>
             </div>
-            <!-- Función dinámica propia de Lucas: Contador de Power-Ups con Reset -->
-            <div class="recomendador-box">
-                <button id="btnLikeLucas" class="btn-arcade">⚡ DAR
-                    POWER-UP</button>
-                <button id="btnResetLucas" class="btn-reset"
-                    title="Reiniciar contador">↺ RESET</button>
-                <p id="contadorLikes" class="selection-status">Power-Ups
-                    recibidos: 0</p>
-                <p id="mensajePowerUp" class="feedback-powerup"></p>
-            </div>
             <!-- Sección Películas Favoritas con IMDb -->
             <div class="profile-section">
                 <h2>// PELÍCULAS FAVORITAS (IMDb)</h2>
                 <div class="favorites-grid">
                     <article class="fav-card">
                         <img src="img/peli-inception.jpeg"
-                            alt="Póster Inception" class="media-poster">
+                            alt="Póster Inception"
+                            class="media-poster poster-movie">
                         <div class="fav-info">
                             <h3>Inception</h3>
                             <p>2010 · Acción / Sci-Fi</p>
@@ -103,7 +94,8 @@
                     </article>
                     <article class="fav-card">
                         <img src="img/peli-vforvendetta.jpeg"
-                            alt="Póster V for Vendetta" class="media-poster">
+                            alt="Póster V for Vendetta"
+                            class="media-poster poster-movie">
                         <div class="fav-info">
                             <h3>V for Vendetta</h3>
                             <p>2005 · Acción / Drama / Sci-Fi</p>
@@ -117,7 +109,7 @@
                     <article class="fav-card">
                         <img src="img/peli-spiderverse.jpeg"
                             alt="Póster Across the Spiderverse"
-                            class="media-poster">
+                            class="media-poster poster-movie">
                         <div class="fav-info">
                             <h3>Spider-Man: Across the Spider-Verse</h3>
                             <p>2023 · Animación / Acción / Aventura</p>
@@ -136,7 +128,8 @@
                 <div class="favorites-grid">
                     <article class="fav-card">
                         <img src="img/disco-metallica.jpeg"
-                            alt="Tapa The Black Album" class="media-poster">
+                            alt="Tapa The Black Album"
+                            class="media-poster poster-disc">
                         <div class="fav-info">
                             <h3>The Black Album</h3>
                             <p>Metallica · 1991</p>
@@ -149,7 +142,8 @@
                     </article>
                     <article class="fav-card">
                         <img src="img/disco-guns.jpeg"
-                            alt="Tapa Use Your Illusion I" class="media-poster">
+                            alt="Tapa Use Your Illusion I"
+                            class="media-poster poster-disc">
                         <div class="fav-info">
                             <h3>Use Your Illusion I</h3>
                             <p>Guns N' Roses · 1991</p>
@@ -163,7 +157,7 @@
                     <article class="fav-card">
                         <img src="img/disco-dark.png"
                             alt="Tapa The Dark Side of the Moon"
-                            class="media-poster">
+                            class="media-poster poster-disc">
                         <div class="fav-info">
                             <h3>The Dark Side of the Moon</h3>
                             <p>Pink Floyd · 1973</p>
@@ -177,6 +171,15 @@
                 </div>
             </div>
         </section>
+        <!-- Función dinámica propia de Lucas: Contador de Power-Ups con Reset -->
+        <div class="recomendador-box">
+            <button id="btnLikeLucas" class="btn-arcade">⚡ DAR POWER-UP</button>
+            <button id="btnResetLucas" class="btn-reset"
+                title="Reiniciar contador">↺ RESET</button>
+            <p id="contadorLikes" class="selection-status">Power-Ups recibidos:
+                0</p>
+            <p id="mensajePowerUp" class="feedback-powerup"></p>
+        </div>
         <!-- Navegación rápida entre compañeros -->
         <nav class="team-quick-nav">
             <p>// OTROS INTEGRANTES DEL EQUIPO:</p>
