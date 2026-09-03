@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil: Belén Gatto · Grupo 10</title>
+    <!-- Fuentes retro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Barra de navegacion superior -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">&lt;GRUPO_10 /&gt;</a>
+            <!-- Control de Sonido 8-bit -->
+            <button id="soundToggle" class="btn-sound"
+                aria-label="Activar o desactivar sonido">🔊 SFX: OFF</button>
+            <button class="nav-toggle" id="navToggle"
+                aria-label="Abrir menu">☰</button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">> Inicio</a></li>
+                    <li><a href="belen-gatto.html" class="active"
+                            target="_blank" rel="noopener noreferrer">> Belén
+                            Gatto</a></li>
+                    <li><a href="guido-gattas.html" target="_blank"
+                            rel="noopener noreferrer">> Guido Gattás</a></li>
+                    <li><a href="lucas-katz.html" target="_blank"
+                            rel="noopener noreferrer">> Lucas Katz</a></li>
+                    <li><a href="gonzalo-santini.html" target="_blank"
+                            rel="noopener noreferrer">> Gonzalo Santini</a></li>
+                    <li><a href="bitacora.html" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-bitacora">Bitácora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <!-- Navegacion interna -->
+        <nav class="profile-breadcrumbs">
+            <a href="index.html" class="btn-back">← Volver al Inicio</a>
+        </nav>
+        <!-- Tarjeta Principal del Perfil -->
+        <section class="profile-card">
+            <div class="profile-header">
+                <img src="img/avatar-belen.jpeg" alt="Avatar Belén Gatto"
+                    class="avatar avatar-belen avatar-large">
+                <div class="profile-meta">
+                    <span class="player-tag">PLAYER 01 // READY</span>
+                    <h1>Belén Gatto</h1>
+                    <p class="meta-item">📍 Ciudad: <strong>Parque Avellaneda -
+                            CABA</strong></p>
+                    <p class="meta-item">💻 GitHub:
+                        <a href="https://github.com/belencatt" target="_blank"
+                            rel="noopener noreferrer"
+                            style="color: var(--neon-cyan); text-decoration: underline;">
+                            github.com/belencatt ↗
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- Seccion Habilidades -->
+            <div class="profile-section">
+                <h2>// HABILIDADES TÉCNICAS (SKILLS)</h2>
+                <ul class="skills-grid">
+                    <li class="skill-item">HTML</li>
+                    <li class="skill-item">CSS</li>
+                    <li class="skill-item">JavaScript</li>
+                    <li class="skill-item">MySQL</li>
+                </ul>
+            </div>
+            <!-- Seccion Peliculas Favoritas con IMDb -->
+            <div class="profile-section">
+                <h2>// PELÍCULAS FAVORITAS (IMDb)</h2>
+                <div class="favorites-grid">
+                    <article class="fav-card">
+                        <img src="img/peli-jurassic-park.jpeg"
+                            alt="Póster Jurassic Park"
+                            class="media-poster poster-movie">
+                        <div class="fav-info">
+                            <h3>Jurassic Park</h3>
+                            <p>1993 · Aventura / Sci-Fi</p>
+                            <a href="https://www.imdb.com/title/tt0107290/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/peli-goodfellas.jpeg"
+                            alt="Póster Goodfellas"
+                            class="media-poster poster-movie">
+                        <div class="fav-info">
+                            <h3>Goodfellas</h3>
+                            <p>1990 · Crimen / Drama</p>
+                            <a href="https://www.imdb.com/title/tt0099685/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/peli-esperando-la-carroza.jpeg"
+                            alt="Póster Esperando la carroza"
+                            class="media-poster poster-movie">
+                        <div class="fav-info">
+                            <h3>Esperando la carroza</h3>
+                            <p>1985 · Comedia</p>
+                            <a href="https://www.imdb.com/title/tt0089108/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- Seccion Discos Favoritos -->
+            <div class="profile-section">
+                <h2>// DISCOS FAVORITOS</h2>
+                <div class="favorites-grid">
+                    <article class="fav-card">
+                        <img src="img/disco-physical-graffiti.jpeg"
+                            alt="Tapa Physical Graffiti"
+                            class="media-poster poster-disc">
+                        <div class="fav-info">
+                            <h3>Physical Graffiti</h3>
+                            <p>Led Zeppelin · 1975</p>
+                            <a href="https://open.spotify.com/intl-es/album/4Q7cPyiP8cMIlUEHAqeYfd"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/disco-machine-head.jpeg"
+                            alt="Tapa Machine Head"
+                            class="media-poster poster-disc">
+                        <div class="fav-info">
+                            <h3>Machine Head</h3>
+                            <p>Deep Purple · 1972</p>
+                            <a href="https://open.spotify.com/intl-es/album/32NQ56VZDTXSH3SMv4XSGN"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/disco-screaming-for-vengeance.jpeg"
+                            alt="Tapa Screaming for Vengeance"
+                            class="media-poster poster-disc">
+                        <div class="fav-info">
+                            <h3>Screaming for Vengeance</h3>
+                            <p>Judas Priest · 1982</p>
+                            <a href="https://open.spotify.com/intl-es/album/0V7mTTzioHiYIjfM8ATZBI"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Botón interactivo de Belén -->
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <button id="btnPacman" class="btn-pacman"> LANZAR PAC-MAN</button>
+        </div>
+        <!-- Navegacion rapida entre compañeros -->
+        <nav class="team-quick-nav">
+            <p>// OTROS INTEGRANTES DEL EQUIPO:</p>
+            <div class="quick-nav-links">
+                <a href="guido-gattas.html" target="_blank"
+                    rel="noopener noreferrer">Guido Gattás →</a>
+                <a href="lucas-katz.html" target="_blank"
+                    rel="noopener noreferrer">Lucas Katz →</a>
+                <a href="gonzalo-santini.html" target="_blank"
+                    rel="noopener noreferrer">Gonzalo Santini →</a>
+            </div>
+        </nav>
+    </main>
+    <footer class="footer">
+        <p>© 2026 Grupo 10 · Front End · IFTS 29</p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/belen.js"></script>
+</body>
+</html>
