@@ -1,5 +1,4 @@
-/* Variables y Temática Retro / Arcade */
-
+/* Variables y Tematica Retro / Arcade */
 :root {
   --bg-color: #0d0221;
   --card-bg: #190a35;
@@ -17,7 +16,7 @@
   --font-terminal: 'VT323', monospace;
 }
 
-/* Reset básico */
+/* Reset basico */
 * {
   margin: 0;
   padding: 0;
@@ -33,6 +32,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 a {
@@ -44,7 +45,12 @@ ul {
   list-style: none;
 }
 
-/* Header y Navegación Global */
+/* Encabezados y corte de lineas largas */
+h1, h2, h3, .logo {
+  word-break: break-word;
+}
+
+/* Header y Navegacion Global */
 .header {
   background-color: var(--card-bg);
   border-bottom: 3px solid var(--neon-pink);
@@ -235,7 +241,7 @@ ul {
   background-color: var(--card-hover);
 }
 
-/* Avatar en las tarjetas del Index (Tamaño desktop) */
+/* Avatar en las tarjetas del Index */
 .avatar {
   width: 220px;
   height: 220px;
@@ -254,7 +260,7 @@ ul {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Avatar grande en la cabecera del perfil individual (Tamaño desktop) */
+/* Avatar grande en la cabecera del perfil individual */
 .avatar-large {
   width: 260px;
   height: 260px;
@@ -324,23 +330,36 @@ ul {
 }
 
 .card-btn {
-  display: inline-block;
+  display: block;
   width: 100%;
+  margin-top: auto;
   background-color: var(--neon-yellow);
   color: #000;
   font-family: var(--font-pixel);
-  font-size: 0.65rem;
-  padding: 0.6rem 0;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.75rem 0;
   border: 2px solid #000;
-  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 4px 0 #b3a100, 0 4px 10px rgba(255, 230, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.2s ease;
 }
 
 .card-btn:hover {
   background-color: var(--neon-pink);
   color: #fff;
+  box-shadow: 0 4px 0 #8c0046, 0 0 15px var(--neon-pink);
+  transform: translateY(-2px);
 }
 
-/* Páginas de Perfil Individual (Estructura Común) */
+.card-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #000;
+}
+
+/* Paginas de Perfil Individual */
 .profile-breadcrumbs {
   margin-bottom: 1.5rem;
 }
@@ -397,10 +416,17 @@ ul {
 .meta-item {
   font-size: 1.3rem;
   color: var(--text-muted);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .meta-item strong {
   color: var(--neon-cyan);
+}
+
+.profile-meta a {
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 .profile-section {
@@ -421,7 +447,7 @@ ul {
   gap: 1rem;
 }
 
-/* Badge y botón arcade de cada habilidad */
+/* Badge de cada habilidad */
 .skill-item {
   background: linear-gradient(180deg, #1f0b3d 0%, #0d0221 100%);
   border: 2px solid var(--neon-cyan);
@@ -465,7 +491,7 @@ ul {
   border-color: var(--neon-pink);
 }
 
-/* Imágenes de favoritos */
+/* Imagenes de favoritos */
 .media-poster {
   width: 100%;
   object-fit: cover;
@@ -473,9 +499,10 @@ ul {
   border: 1px solid #222;
   margin-bottom: 0.8rem;
   background-color: #000;
+  display: block;
 }
 
-/* Clases de proporción */
+/* Clases de proporcion */
 .poster-movie {
   aspect-ratio: 2 / 3;
   height: auto;
@@ -506,7 +533,7 @@ ul {
   flex-grow: 1;
 }
 
-/* Botón externo unificado para películas y música */
+/* Boton externo unificado para peliculas y musica */
 .media-link {
   display: inline-block;
   font-family: var(--font-pixel);
@@ -557,16 +584,16 @@ ul {
   color: var(--neon-pink);
 }
 
-/* Contenedor común para funciones dinámicas */
+/* Contenedor comun para funciones dinamicas */
 .recomendador-box {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* Estilos de la función dinámica: Perfil Guido Gattás */
+/* Estilos de la funcion dinamica: Perfil Guido Gattas */
 .fav-card.destacado {
-  border-color: var(--neon-yellow);
-  box-shadow: 0 0 10px var(--neon-yellow);
+  border-color: var(--neon-yellow) !important;
+  box-shadow: 0 0 15px var(--neon-yellow) !important;
 }
 
 /* Footer */
@@ -581,7 +608,7 @@ ul {
 
 /* Media Queries Responsive */
 
-/* De 401px a 900px (Tablets y móviles estándar) */
+/* De 401px a 900px (Tablets y moviles estandar) */
 @media (max-width: 900px) {
   .nav-toggle { display: block; }
   .nav-menu {
@@ -600,7 +627,7 @@ ul {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .favorites-grid { grid-template-columns: 1fr; }
 
-  /* Escala de avatares en tablets y pantallas medianas */
+  /* Escala de avatares en tablets */
   .avatar {
     width: 160px;
     height: 160px;
@@ -614,26 +641,46 @@ ul {
 
 /* Menor a 400px (Celulares chicos) */
 @media (max-width: 400px) {
-  .hero h1 { font-size: 1.2rem; }
-  .team-grid { grid-template-columns: 1fr; }
+  .main-content {
+    width: 95%;
+  }
+
+  .profile-card {
+    padding: 1.2rem 0.8rem;
+  }
+
   .profile-header {
     flex-direction: column;
     text-align: center;
-    gap: 1.2rem;
+    gap: 1rem;
   }
-  .skills-grid { grid-template-columns: 1fr; }
-  .profile-meta h1 { font-size: 1.1rem; }
 
-  /* Escala segura de avatares para pantallas chicas */
+  .hero h1 { font-size: 1.2rem; }
+  .profile-meta h1 { font-size: 1.1rem; }
+  .team-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+
+  /* Avatar adaptado al ancho de pantalla */
   .avatar {
-    width: 130px;
-    height: 130px;
-    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 130px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto 1rem auto;
   }
+
   .avatar-large {
-    width: 140px;
-    height: 140px;
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    aspect-ratio: 1 / 1;
     font-size: 1.6rem;
+    margin: 0 auto;
+  }
+
+  .quick-nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }
 
