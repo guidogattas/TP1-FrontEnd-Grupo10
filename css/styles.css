@@ -725,6 +725,14 @@ h1, h2, h3, .logo {
     width: 150px;
     height: 150px;
   }
+
+  /* Ajuste para los botones de Lucas en pantallas chicas */
+  .btn-reset {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    display: inline-block;
+  }
+
 }
 
 /* Estilos de función dinámica - Perfil Lucas Katz */
@@ -775,12 +783,5 @@ h1, h2, h3, .logo {
   }
 }
 
-@media (min-width: 400px){
 
-/* Ajuste para los botones de Lucas en pantallas chicas */
-  .btn-reset {
-    margin-left: 0;
-    margin-top: 0.5rem;
-    display: inline-block;
-  }
-}
+
