@@ -727,8 +727,60 @@ h1, h2, h3, .logo {
   }
 }
 
+/* Estilos de función dinámica - Perfil Lucas Katz */
+
+/* Botón para reiniciar los Power-Ups */
+.btn-reset {
+  background: transparent;
+  color: var(--neon-pink);
+  border: 1px solid var(--neon-pink);
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+  padding: 0.75rem 0.9rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.2s;
+}
+
+.btn-reset:hover {
+  background-color: var(--neon-pink);
+  color: #fff;
+  box-shadow: 0 0 8px var(--neon-pink);
+}
+
+/* Cartel flotante de feedback (+1 POWER UP / RESET) */
+.feedback-powerup {
+  font-family: var(--font-pixel);
+  font-size: 0.8rem;
+  color: var(--neon-yellow);
+  margin-top: 0.5rem;
+  height: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.feedback-powerup.visible {
+  opacity: 1;
+  text-shadow: 0 0 8px var(--neon-yellow);
+}
+
+
+
+
+
 @media (min-width: 1200px) {
   .nav-container, .main-content {
     max-width: 1200px;
+  }
+}
+
+@media (min-width: 400px){
+
+/* Ajuste para los botones de Lucas en pantallas chicas */
+  .btn-reset {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    display: inline-block;
   }
 }

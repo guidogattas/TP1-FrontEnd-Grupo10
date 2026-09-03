@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil: Lucas Katz · Grupo 10</title>
+    <!-- Fuentes retro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Barra de navegación superior -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">&lt;GRUPO_10 /&gt;</a>
+            <!-- Control de Sonido 8-bit -->
+            <button id="soundToggle" class="btn-sound"
+                aria-label="Activar o desactivar sonido">🔊 SFX: OFF</button>
+            <button class="nav-toggle" id="navToggle"
+                aria-label="Abrir menú">☰</button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">> Inicio</a></li>
+                    <li><a href="belen-gatto.html" target="_blank"
+                            rel="noopener noreferrer">> Belén Gatto</a></li>
+                    <li><a href="guido-gattas.html" target="_blank"
+                            rel="noopener noreferrer">> Guido Gattás</a></li>
+                    <li><a href="lucas-katz.html" class="active" target="_blank"
+                            rel="noopener noreferrer">> Lucas Katz</a></li>
+                    <li><a href="gonzalo-santini.html" target="_blank"
+                            rel="noopener noreferrer">> Gonzalo Santini</a></li>
+                    <li><a href="bitacora.html" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-bitacora">Bitácora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <!-- Navegación interna -->
+        <nav class="profile-breadcrumbs">
+            <a href="index.html" class="btn-back">← Volver al Inicio</a>
+        </nav>
+        <!-- Tarjeta Principal del Perfil -->
+        <section class="profile-card">
+            <div class="profile-header">
+                <div class="avatar avatar-lucas avatar-large">LK</div>
+                <div class="profile-meta">
+                    <span class="player-tag">PLAYER 03 // READY</span>
+                    <h1>Lucas Katz</h1>
+                    <p class="meta-item">📍 Ciudad: <strong>Villa Santa Rita -
+                            CABA</strong></p>
+                    <p class="meta-item">💻 GitHub:
+                        <a href="https://github.com/LucasKatz" target="_blank"
+                            rel="noopener noreferrer"
+                            style="color: var(--neon-cyan); text-decoration: underline;">
+                            github.com/LucasKatz ↗
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- Sección Habilidades -->
+            <div class="profile-section">
+                <h2>// HABILIDADES TÉCNICAS (SKILLS)</h2>
+                <ul class="skills-grid">
+                    <li class="skill-item">NextJS</li>
+                    <li class="skill-item">React</li>
+                    <li class="skill-item">Backend</li>
+                    <li class="skill-item">MySQL</li>
+                </ul>
+            </div>
+            <!-- Función dinámica propia de Lucas: Contador de Power-Ups con Reset -->
+            <div class="recomendador-box">
+                <button id="btnLikeLucas" class="btn-arcade">⚡ DAR
+                    POWER-UP</button>
+                <button id="btnResetLucas" class="btn-reset"
+                    title="Reiniciar contador">↺ RESET</button>
+                <p id="contadorLikes" class="selection-status">Power-Ups
+                    recibidos: 0</p>
+                <p id="mensajePowerUp" class="feedback-powerup"></p>
+            </div>
+            <!-- Sección Películas Favoritas con IMDb -->
+            <div class="profile-section">
+                <h2>// PELÍCULAS FAVORITAS (IMDb)</h2>
+                <div class="favorites-grid">
+                    <article class="fav-card">
+                        <img src="img/peli-inception.jpeg"
+                            alt="Póster Inception" class="media-poster">
+                        <div class="fav-info">
+                            <h3>Inception</h3>
+                            <p>2010 · Acción / Sci-Fi</p>
+                            <a href="https://www.imdb.com/title/tt1375666/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/peli-vforvendetta.jpeg"
+                            alt="Póster V for Vendetta" class="media-poster">
+                        <div class="fav-info">
+                            <h3>V for Vendetta</h3>
+                            <p>2005 · Acción / Drama / Sci-Fi</p>
+                            <a href="https://www.imdb.com/title/tt0434409/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/peli-spiderverse.jpeg"
+                            alt="Póster Across the Spiderverse"
+                            class="media-poster">
+                        <div class="fav-info">
+                            <h3>Spider-Man: Across the Spider-Verse</h3>
+                            <p>2023 · Animación / Acción / Aventura</p>
+                            <a href="https://www.imdb.com/title/tt9362722/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- Sección Discos Favoritos -->
+            <div class="profile-section">
+                <h2>// DISCOS FAVORITOS</h2>
+                <div class="favorites-grid">
+                    <article class="fav-card">
+                        <img src="img/disco-metallica.jpeg"
+                            alt="Tapa The Black Album" class="media-poster">
+                        <div class="fav-info">
+                            <h3>The Black Album</h3>
+                            <p>Metallica · 1991</p>
+                            <a href="https://open.spotify.com/intl-es/album/3dck2tBxGfxj9m3CguDgjb"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/disco-guns.jpeg"
+                            alt="Tapa Use Your Illusion I" class="media-poster">
+                        <div class="fav-info">
+                            <h3>Use Your Illusion I</h3>
+                            <p>Guns N' Roses · 1991</p>
+                            <a href="https://open.spotify.com/intl-es/album/0CxPbTRARqKUYighiEY9Sz"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/disco-dark.png"
+                            alt="Tapa The Dark Side of the Moon"
+                            class="media-poster">
+                        <div class="fav-info">
+                            <h3>The Dark Side of the Moon</h3>
+                            <p>Pink Floyd · 1973</p>
+                            <a href="https://open.spotify.com/intl-es/album/4LH4d3cOWNNsVw41Gqt2kv"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Navegación rápida entre compañeros -->
+        <nav class="team-quick-nav">
+            <p>// OTROS INTEGRANTES DEL EQUIPO:</p>
+            <div class="quick-nav-links">
+                <a href="belen-gatto.html" target="_blank"
+                    rel="noopener noreferrer">Belén Gatto →</a>
+                <a href="guido-gattas.html" target="_blank"
+                    rel="noopener noreferrer">Guido Gattás →</a>
+                <a href="gonzalo-santini.html" target="_blank"
+                    rel="noopener noreferrer">Gonzalo Santini →</a>
+            </div>
+        </nav>
+    </main>
+    <footer class="footer">
+        <p>© 2026 Grupo 10 · Front End · IFTS 29</p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/lucas.js"></script>
+</body>
+</html>
