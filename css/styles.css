@@ -1,4 +1,4 @@
-/* Variables del sitio */
+/* Variables de colores */
 :root {
   --bg-color: #0d0221;
   --card-bg: #190a35;
@@ -658,7 +658,7 @@ h1, h2, h3, .logo, .meta-item {
   color: var(--text-muted);
 }
 
-/* Breakpoints obligatorios */
+/* Breakpoints */
 
 @media (min-width: 1200px) {
   .nav-container,
