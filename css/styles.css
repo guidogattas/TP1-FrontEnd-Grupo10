@@ -1,21 +1,22 @@
-/* Variables y Tematica Retro / Arcade */
+/* Variables del sitio */
 :root {
   --bg-color: #0d0221;
   --card-bg: #190a35;
   --card-hover: #260f50;
-  
+
   --neon-pink: #ff007f;
   --neon-cyan: #00f0ff;
   --neon-yellow: #ffe600;
   --neon-green: #00ff66;
-  
+
   --text-color: #f3e8ff;
   --text-muted: #b9a2dc;
-  
+
   --font-pixel: 'Press Start 2P', monospace;
   --font-terminal: 'VT323', monospace;
 }
 
+/* Reset y base */
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +48,7 @@ h1, h2, h3, .logo, .meta-item {
   overflow-wrap: break-word;
 }
 
-/* Header y Navegacion Global */
+/* Header y navegacion */
 .header {
   background-color: var(--card-bg);
   border-bottom: 3px solid var(--neon-pink);
@@ -130,7 +131,7 @@ h1, h2, h3, .logo, .meta-item {
   cursor: pointer;
 }
 
-/* Portada y Secciones */
+/* Portada */
 .main-content {
   flex: 1;
   padding: 2.5rem 0;
@@ -181,7 +182,7 @@ h1, h2, h3, .logo, .meta-item {
   color: var(--neon-pink);
 }
 
-/* Botonera y Controles */
+/* Botones y acciones */
 .arcade-controls,
 .recomendador-box {
   text-align: center;
@@ -270,7 +271,7 @@ h1, h2, h3, .logo, .meta-item {
   text-shadow: 0 0 8px var(--neon-yellow);
 }
 
-/* Grillas y Tarjetas */
+/* Tarjetas y contenedor general */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -323,7 +324,7 @@ h1, h2, h3, .logo, .meta-item {
   100% { box-shadow: 0 0 35px var(--neon-pink), 0 0 10px #fff; }
 }
 
-/* Avatares e Iniciales */
+/* Avatares */
 .avatar {
   width: 220px;
   height: 220px;
@@ -375,7 +376,6 @@ h1, h2, h3, .logo, .meta-item {
   margin-bottom: 1rem;
 }
 
-/* Skills en Portada */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -431,7 +431,7 @@ h1, h2, h3, .logo, .meta-item {
   box-shadow: 0 1px 0 #000;
 }
 
-/* Detalles de Perfil Individual */
+/* Paginas de perfil */
 .profile-breadcrumbs {
   margin-bottom: 1.5rem;
 }
@@ -505,7 +505,6 @@ h1, h2, h3, .logo, .meta-item {
   margin-bottom: 2.5rem;
 }
 
-/* Skills en Perfil */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -534,7 +533,6 @@ h1, h2, h3, .logo, .meta-item {
   box-shadow: 0 0 15px var(--neon-pink);
 }
 
-/* Grilla Películas / Música */
 .favorites-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -600,7 +598,6 @@ h1, h2, h3, .logo, .meta-item {
   box-shadow: 0 0 8px var(--neon-yellow);
 }
 
-/* Quick Nav Inferior */
 .team-quick-nav {
   background-color: var(--card-bg);
   border: 1px dashed var(--neon-cyan);
@@ -634,7 +631,7 @@ h1, h2, h3, .logo, .meta-item {
   color: var(--neon-pink);
 }
 
-/* Animacion Pac-Man */
+/* Animacion de Belen */
 .pacman-runner {
   position: fixed;
   bottom: 25%;
@@ -661,8 +658,16 @@ h1, h2, h3, .logo, .meta-item {
   color: var(--text-muted);
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
+/* Breakpoints obligatorios */
+
+@media (min-width: 1200px) {
+  .nav-container,
+  .main-content {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 900px) {
   .main-content {
     width: 94%;
     padding: 1.5rem 0;
@@ -671,6 +676,7 @@ h1, h2, h3, .logo, .meta-item {
   .team-grid,
   .favorites-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .skills-grid {
@@ -678,13 +684,31 @@ h1, h2, h3, .logo, .meta-item {
     gap: 0.6rem;
   }
 
-  .hero h1 { font-size: 1.1rem; }
+  .hero h1 { 
+    font-size: 1.1rem; 
+  }
+
   .hero .description,
-  .meta-item { font-size: 1.15rem; }
-  .profile-card { padding: 1.5rem 1rem; }
-  .profile-meta h1 { font-size: 1rem; }
-  .player-tag { font-size: 0.55rem; }
-  .skill-item { font-size: 0.6rem; padding: 0.7rem 0.3rem; }
+  .meta-item { 
+    font-size: 1.15rem; 
+  }
+
+  .profile-card { 
+    padding: 1.5rem 1rem; 
+  }
+
+  .profile-meta h1 { 
+    font-size: 1rem; 
+  }
+
+  .player-tag { 
+    font-size: 0.55rem; 
+  }
+
+  .skill-item { 
+    font-size: 0.6rem; 
+    padding: 0.7rem 0.3rem; 
+  }
 
   .avatar {
     width: 170px;
@@ -730,11 +754,53 @@ h1, h2, h3, .logo, .meta-item {
   }
 }
 
-@media (max-width: 360px) {
-  .profile-meta h1 { font-size: 0.85rem; }
-  .skills-grid { grid-template-columns: 1fr; }
-  .avatar { width: 140px; height: 140px; font-size: 1.5rem; }
-  .avatar-large { width: 150px; height: 150px; font-size: 2.2rem; }
+@media (max-width: 400px) {
+  .team-grid,
+  .favorites-grid,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 { 
+    font-size: 0.95rem; 
+    line-height: 1.4;
+  }
+
+  .hero .description,
+  .meta-item { 
+    font-size: 1.15rem; 
+  }
+
+  .profile-card { 
+    padding: 1.2rem 0.8rem; 
+  }
+
+  .profile-meta h1 { 
+    font-size: 0.85rem; 
+  }
+
+  .player-tag { 
+    font-size: 0.55rem; 
+  }
+
+  .skill-item { 
+    font-size: 0.6rem; 
+    padding: 0.7rem 0.3rem; 
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .avatar-large {
+    width: 150px;
+    height: 150px;
+    font-size: 2.2rem;
+  }
+
   .btn-reset {
     margin: 0.5rem 0 0 0;
     display: inline-block;

@@ -1,4 +1,4 @@
-// 1. MENÚ RESPONSIVE (MOBILE)
+// 1. MENU RESPONSIVE (Para mobile)
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
 
@@ -8,18 +8,17 @@ if (navToggle && navMenu) {
     });
 }
 
-// 2. BOTÓN SFX (ON / OFF)
+// 2. BOTON SFX (ON / OFF)
 const botonSonido = document.getElementById('soundToggle');
 
 if (botonSonido) {
     botonSonido.addEventListener('click', () => {
         botonSonido.classList.toggle('active');
 
-        // Cambiamos el texto entre ON y OFF
         if (botonSonido.classList.contains('active')) {
-            botonSonido.textContent = '🔊 SFX: ON';
+            botonSonido.textContent = 'SFX: ON';
         } else {
-            botonSonido.textContent = '🔊 SFX: OFF';
+            botonSonido.textContent = 'SFX: OFF';
         }
     });
 }
@@ -34,17 +33,14 @@ const sonidoCowabunga = new Audio('sounds/tmnt-turtles-in-time-ost-cowabunga.mp3
 
 if (botonRuleta) {
     botonRuleta.addEventListener('click', () => {
-        // Desactivamos el botón mientras gira
         botonRuleta.disabled = true;
         if (textoEstado) textoEstado.textContent = 'Eligiendo personaje...';
 
-        // Sacamos clases de giros anteriores
         tarjetas.forEach(t => t.classList.remove('selected-arcade', 'arcade-winner'));
 
         let vueltas = 0;
         let elegido = 0;
 
-        // Efecto ruleta simple con setInterval
         const timer = setInterval(() => {
             tarjetas.forEach(t => t.classList.remove('selected-arcade'));
 
@@ -53,7 +49,6 @@ if (botonRuleta) {
 
             vueltas++;
 
-            // Frena a las 12 vueltas
             if (vueltas >= 12) {
                 clearInterval(timer);
 
@@ -61,22 +56,26 @@ if (botonRuleta) {
                 tarjetaFinal.classList.remove('selected-arcade');
                 tarjetaFinal.classList.add('arcade-winner');
 
-                if (textoEstado) textoEstado.textContent = '¡COWABUNGA!';
+                // Desplaza la vista suavemente hasta la tarjeta elegida
+                tarjetaFinal.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
 
-                // Si el botón dice ON, reproduce el audio
+                if (textoEstado) textoEstado.textContent = 'COWABUNGA!';
+
                 if (botonSonido && botonSonido.textContent.includes('ON')) {
                     sonidoCowabunga.currentTime = 0;
-                    sonidoCowabunga.play();
+                    sonidoCowabunga.play().catch(() => {});
                 }
 
-                // Buscamos el link del perfil
                 const link = tarjetaFinal.querySelector('.card-btn').href;
 
-                // Espera 2 segundos para que suene entero el Cowabunga y redirige
+                // La pantalla va al elegido y después entra al link
                 setTimeout(() => {
                     botonRuleta.disabled = false;
                     window.location.href = link;
-                }, 2000);
+                }, 1000);
             }
         }, 120);
     });
