@@ -35,24 +35,27 @@ https://tp-1-front-end-grupo10.vercel.app/index.html
 
 ## Estructura de archivos y carpetas
 
+## Estructura de archivos y carpetas
+
+```text
 TP1-FrontEnd-Grupo10/
 ├── index.html              # Portada principal con ruleta arcade y cards del equipo
-├── bitacora.html           # Registro cronológico del avance y reuniones
-├── guido-gattas.html       # Perfil individual: Guido Gattás
+├── bitacora.html           # Registro cronologico del avance y reuniones
+├── guido-gattas.html       # Perfil individual: Guido Gattas
 ├── lucas-katz.html         # Perfil individual: Lucas Katz
-├── belen-gatto.html        # Perfil individual: Belén Gatto
+├── belen-gatto.html        # Perfil individual: Belen Gatto
 ├── gonzalo-santini.html    # Perfil individual: Gonzalo Santini
 ├── css/
 │   └── styles.css          # Hoja de estilos compartida, variables y media queries
 ├── js/
-│   ├── main.js             # Menú hamburguesa, control general de SFX y ruleta de portada
-│   ├── guido.js            # Recomendador aleatorio de películas y música
+│   ├── main.js             # Menu hamburguesa, control general de SFX y ruleta de portada
+│   ├── guido.js            # Recomendador aleatorio de peliculas y musica
 │   ├── lucas.js            # Contador de power-ups, combos y persistencia
-│   ├── belen.js            # Animación interactiva de Pac-Man cruzando la pantalla
-│   └── gonzalo.js          # Radar detector de perímetro zombie con audio
-├── img/                    # Imágenes de perfiles, afiches de películas y discos
+│   ├── belen.js            # Animacion interactiva de Pac-Man cruzando la pantalla
+│   └── gonzalo.js          # Radar detector de perimetro zombie con audio
+├── img/                    # Imagenes de perfiles, afiches de peliculas y discos
 └── sounds/                 # Efectos de audio en formato mp3
-
+```
 ---
 
 ## Guía de estilos
