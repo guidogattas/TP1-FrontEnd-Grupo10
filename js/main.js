@@ -66,7 +66,7 @@ if (botonRuleta) {
 
                 if (botonSonido && botonSonido.textContent.includes('ON')) {
                     sonidoCowabunga.currentTime = 0;
-                    sonidoCowabunga.play().catch(() => {});
+                    sonidoCowabunga.play().catch(() => { });
                 }
 
                 const link = tarjetaFinal.querySelector('.card-btn').href;
@@ -75,7 +75,7 @@ if (botonRuleta) {
                 setTimeout(() => {
                     botonRuleta.disabled = false;
                     window.location.href = link;
-                }, 1000);
+                }, 1600);  // Le pusimos 1.6 segundos porque se nos cortaba el sonido antes de entrar al link
             }
         }, 120);
     });
