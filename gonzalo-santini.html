@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil: Gonzalo Santini · Grupo 10</title>
+    <!-- Fuentes retro Press Start 2P y VT323 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/favicon-1.png">
+</head>
+<body>
+    <!-- Barra de navegación superior -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">>> GRUPO_10</a>
+            <!-- Control de Sonido 8-bit -->
+            <button id="soundToggle" class="btn-sound active"
+                aria-label="Activar o desactivar sonido">🔊 SFX: ON</button>
+            <button class="nav-toggle" id="navToggle"
+                aria-label="Abrir menú">☰</button>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html">> Inicio</a></li>
+                    <li><a href="belen-gatto.html" target="_blank"
+                            rel="noopener noreferrer">> Belén Gatto</a></li>
+                    <li><a href="guido-gattas.html" target="_blank"
+                            rel="noopener noreferrer">> Guido Gattás</a></li>
+                    <li><a href="lucas-katz.html" target="_blank"
+                            rel="noopener noreferrer">> Lucas Katz</a></li>
+                    <li><a href="gonzalo-santini.html" class="active"
+                            target="_blank" rel="noopener noreferrer">> Gonzalo
+                            Santini</a></li>
+                    <li><a href="bitacora.html" target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-bitacora">Bitácora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <!-- Navegación interna -->
+        <nav class="profile-breadcrumbs">
+            <a href="index.html" class="btn-back">← Volver al Inicio</a>
+        </nav>
+        <!-- Tarjeta Principal del Perfil -->
+        <section class="profile-card">
+            <div class="profile-header">
+                <img src="img/avatar-gonzalo.jpg" alt="Avatar Gonzalo Santini"
+                    class="avatar avatar-gonzalo avatar-large">
+                <div class="profile-meta">
+                    <span class="player-tag">PLAYER 04 // READY</span>
+                    <h1>Gonzalo Santini</h1>
+                    <p class="meta-item">📍 Ciudad: <strong>Buenos Aires -
+                            Argentina</strong></p>
+                    <p class="meta-item">💻 GitHub:
+                        <a href="https://github.com/gonzalo-333" target="_blank"
+                            rel="noopener noreferrer"
+                            style="color: var(--neon-cyan); text-decoration: underline;">
+                            github.com/gonzalo-333 ↗
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <!-- Sección Habilidades -->
+            <div class="profile-section">
+                <h2>// HABILIDADES TÉCNICAS (SKILLS)</h2>
+                <ul class="skills-grid">
+                    <li class="skill-item">Java</li>
+                    <li class="skill-item">C++</li>
+                    <li class="skill-item">Linux</li>
+                    <li class="skill-item">JavaScript</li>
+                </ul>
+            </div>
+            <!-- Sección Películas Favoritas con IMDb -->
+            <div class="profile-section">
+                <h2>// PELÍCULAS FAVORITAS (IMDb)</h2>
+                <div class="favorites-grid">
+                    <article class="fav-card">
+                        <img src="img/peli-braveheart.jpeg"
+                            alt="Póster Braveheart"
+                            class="media-poster poster-movie">
+                        <div class="fav-info">
+                            <h3>Braveheart</h3>
+                            <p>1995 · Drama / Histórico / Acción</p>
+                            <a href="https://www.imdb.com/title/tt0112573/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/peli-they-live.jpeg"
+                            alt="Póster They Live"
+                            class="media-poster poster-movie">
+                        <div class="fav-info">
+                            <h3>They Live</h3>
+                            <p>1988 · Acción / Sci-Fi / Culto</p>
+                            <a href="https://www.imdb.com/title/tt0096256/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/peli-fight-club.jpeg"
+                            alt="Póster Fight Club"
+                            class="media-poster poster-movie">
+                        <div class="fav-info">
+                            <h3>Fight Club</h3>
+                            <p>1999 · Drama / Suspenso psicológico</p>
+                            <a href="https://www.imdb.com/title/tt0137523/"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                Ver en IMDb ↗
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <!-- Sección Discos Favoritos -->
+            <div class="profile-section">
+                <h2>// DISCOS FAVORITOS</h2>
+                <div class="favorites-grid">
+                    <article class="fav-card">
+                        <img src="img/disco-burzum.jpeg" alt="Tapa Filosofem"
+                            class="media-poster poster-disc">
+                        <div class="fav-info">
+                            <h3>Filosofem</h3>
+                            <p>Burzum · 1996</p>
+                            <a href="https://open.spotify.com/intl-es/album/2XQwZUu0MM9ECgwHbcc8qR"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/disco-depressive-silence.jpeg"
+                            alt="Tapa Mourning"
+                            class="media-poster poster-disc">
+                        <div class="fav-info">
+                            <h3>Mourning</h3>
+                            <p>Depressive Silence · 1996</p>
+                            <a href="https://www.youtube.com/watch?v=at26zZPsyqY"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                    <article class="fav-card">
+                        <img src="img/disco-megadeth.jpeg"
+                            alt="Tapa Countdown to Extinction"
+                            class="media-poster poster-disc">
+                        <div class="fav-info">
+                            <h3>Countdown to Extinction</h3>
+                            <p>Megadeth · 1992</p>
+                            <a href="https://open.spotify.com/intl-es/album/0fWLW9j35eQTrOb8mHcnyX"
+                                target="_blank" rel="noopener noreferrer"
+                                class="media-link">
+                                🎧 Escuchar Álbum ↗
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Radar Zombie (Función interactiva) -->
+        <div class="recomendador-box">
+            <button id="btnZombie" class="btn-arcade">
+                ☣️ ESCANEAR PERÍMETRO ZOMBIE
+            </button>
+            <p id="textoZombie" class="selection-status">
+                [ RADAR EN ESPERA: SIN ACTIVIDAD ]
+            </p>
+        </div>
+        <!-- Navegación rápida entre compañeros -->
+        <nav class="team-quick-nav">
+            <p>// OTROS INTEGRANTES DEL EQUIPO:</p>
+            <div class="quick-nav-links">
+                <a href="belen-gatto.html" target="_blank"
+                    rel="noopener noreferrer">Belén Gatto →</a>
+                <a href="guido-gattas.html" target="_blank"
+                    rel="noopener noreferrer">Guido Gattás →</a>
+                <a href="lucas-katz.html" target="_blank"
+                    rel="noopener noreferrer">Lucas Katz →</a>
+            </div>
+        </nav>
+    </main>
+    <footer class="footer">
+        <p>© 2026 Grupo 10 · Front End · IFTS 29</p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/gonzalo.js"></script>
+</body>
+</html>
