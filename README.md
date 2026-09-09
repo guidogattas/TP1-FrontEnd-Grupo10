@@ -82,6 +82,31 @@ TP1-FrontEnd-Grupo10/
 
 ---
 
+## Decisiones de maquetación y estructura responsiva
+
+Para la construcción del sitio se implementó un enfoque responsive asegurando adaptabilidad en tres breakpoints obligatorios (1200px, 900px y 400px):
+
+* Flexbox vs CSS Grid: Se utilizó CSS Grid en las estructuras bidimensionales y repetitivas (la grilla de miembros en portada y los catálogos de películas y discos en los perfiles) para garantizar alineación automática y distribución simétrica de columnas. También usamos Flexbox para estructuras unidireccionales como la barra de navegación, cabeceras, alineación interna de tarjetas y listas de etiquetas de habilidades.
+* Estrategia de adaptación: En resoluciones de escritorio amplias (mayores a 1200px), el contenedor limita su ancho máximo para evitar dispersión visual. Al descender a 900px o menos, la grilla reorganiza las tarjetas en una sola columna vertical (`1fr`) para optimizar el espacio en pantallas de tablets y celulares, y que se vea mejor, sino queda todo muy apretado. En 400px o menos, se reajustan tamaños tipográficos y márgenes internos para prevenir cualquier desborde horizontal.
+* Control y consistencia visual: Se fijaron proporciones estrictas mediante `aspect-ratio: 1 / 1` junto con `object-fit: cover` en los avatares para preservar la estética pixel art y evitar deformaciones en las imágenes sin importar el tamaño del viewport.
+
+---
+
+## Nota de mantenimiento de enlaces externos
+
+El sitio contiene hipervínculos hacia plataformas externas de terceros, tales como:
+* Fichas técnicas en IMDb.
+* Álbumes y pistas en Spotify y YouTube.
+* Tipografías servidas vía Google Fonts CDN.
+
+Consideraciones de mantenimiento preventivo:
+* Disponibilidad de contenido: Dado que estas plataformas son administradas por terceros, los enlaces deben verificarse periódicamente para detectar posibles enlaces rotos (error 404), cambios de dominio o algún tipo de restricción.
+* Seguridad y aislamiento: Todos los hipervínculos externos cuentan con los atributos `target="_blank"` y `rel="noopener noreferrer"`.
+
+
+---
+
+
 ## Funciones JavaScript
 
 ### 1. Portada (js/main.js)
