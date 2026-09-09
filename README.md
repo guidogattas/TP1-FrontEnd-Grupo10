@@ -126,14 +126,6 @@ Consideraciones de mantenimiento preventivo:
 ### 5. Perfil Gonzalo Santini (js/gonzalo.js)
 * Radar detector de amenazas: Simula un escaneo ambiental por sonar acompañado de un efecto sonoro de radar. Al concluir el intervalo de búsqueda, genera un diagnóstico de nivel de amenaza y estado de perímetro aleatorio.
 
----
-
-## Evolución futura del proyecto
-
-Para las siguientes etapas de la cursada y trabajos integradores, el proyecto podría expandirse mediante:
-* Migración de componentes hacia librerías modernas como React o Next.js para optimizar el renderizado y reutilizar módulos de tarjetas.
-* Conexión con APIs públicas REST (Spotify Web API y OMDb API) para cargar metadatos, tráilers y portadas de discos en tiempo real.
-* Integración con una base de datos y backend centralizado para unificar el contador de power-ups entre todos los usuarios y permitir un libro de visitas o tabla de puntuaciones más altas (High Scores).
 
 ---
 
