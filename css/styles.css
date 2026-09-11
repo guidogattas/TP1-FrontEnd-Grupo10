@@ -48,6 +48,22 @@ h1, h2, h3, .logo, .meta-item {
   overflow-wrap: break-word;
 }
 
+/* Capa de scanlines (CRT retro), muy sutil */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  opacity: 0.35;
+}
+
 /* Header y navegacion */
 .header {
   background-color: var(--card-bg);
